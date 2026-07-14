@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-label="Портретна снимка - очаква се">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="760" fill="url(#bg)"/>
+  <g fill="#94A3B8" opacity="0.85">
+    <circle cx="300" cy="285" r="112"/>
+    <path d="M116 760c0-190 82-278 184-278s184 88 184 278z"/>
+  </g>
+  <g stroke="#0F766E" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.3">
+    <path d="M300 78v56"/>
+    <path d="M262 96h76"/>
+  </g>
+  <text x="300" y="716" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#64748B">
+    Място за портретна снимка
+  </text>
+</svg>

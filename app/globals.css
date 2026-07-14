@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* ── Брандова палитра (advatanasova.bg) ─────────────────────────────────────
+   espresso  #0F172A  - най-тъмен (слейт): заглавия, футър, тъмни панели
+   coffee    #1D4ED8  - основен брандов цвят (синьо): бутони, връзки, CTA
+   chestnut  #0F766E  - вторичен акцент (тюркоаз): надзаглавия, икони
+   tan       #A7F3D0  - мента: акценти върху тъмен фон, декоративни рамки
+   cream     #F8FAFC  - светъл фон на секции
+──────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  --color-espresso: #0f172a;
+  --color-coffee: #1d4ed8;
+  --color-chestnut: #0f766e;
+  --color-tan: #a7f3d0;
+  --color-cream: #f8fafc;
+  --color-parchment: #f8fafc;
+  --color-ink: #1e293b;
+  --color-clay: #64748b;
+  --color-line: #e2e8f0;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-tan);
+    color: var(--color-espresso);
+  }
+
+  [id] {
+    scroll-margin-top: 7rem;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.45s ease-out both;
+  }
+}
