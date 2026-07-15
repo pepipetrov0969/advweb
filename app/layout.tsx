@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
@@ -52,6 +53,19 @@ export default function RootLayout({
         <Footer />
         <FloatingContact />
         <JsonLd />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18325005980"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18325005980');
+          `}
+        </Script>
       </body>
     </html>
   );
