@@ -3,6 +3,9 @@
 // да се замени с реалните данни преди публикуване.
 // ─────────────────────────────────────────────────────────────────────────────
 
+const phone = "+359889036109"; // формат за tel: връзка, без интервали
+const phoneDigits = phone.replace(/\D/g, ""); // само цифри, за wa.me / viber линкове
+
 export const site = {
   name: "адв. Красимира Атанасова",
   shortName: "адв. Атанасова",
@@ -14,9 +17,11 @@ export const site = {
   description:
     "Адвокатска кантора в Монтана - правни консултации, сделки с недвижими имоти, търговско и семейно право, процесуално представителство пред съд.",
 
-  phone: "+359889036109", // формат за tel: връзка, без интервали
+  phone,
   phoneDisplay: "0889 036 109",
   email: "atanasovva@abv.bg",
+  whatsappUrl: `https://wa.me/${phoneDigits}`,
+  viberUrl: `viber://chat?number=%2B${phoneDigits}`,
 
   address: {
     city: "гр. Монтана",
@@ -24,8 +29,8 @@ export const site = {
   },
   mapQuery: "Монтана, бул. 3-ти март 84", // адрес за Google Maps картата
 
-  hours: "понеделник - петък · 9:00 - 18:00 ч.",
-  hoursShort: "пон - пет · 9-18 ч.",
+  hours: "понеделник - петък · 9:00 - 18:00 часа",
+  hoursShort: "пон - пет · 9-18 часа",
 
 
   socials: {

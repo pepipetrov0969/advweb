@@ -4,6 +4,7 @@ import "./globals.css";
 import { site } from "@/content/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingContact } from "@/components/shared/FloatingContact";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({
@@ -49,6 +50,7 @@ export default function RootLayout({
         <Header />
         <main id="sadarzhanie">{children}</main>
         <Footer />
+        <FloatingContact />
         <JsonLd />
       </body>
     </html>

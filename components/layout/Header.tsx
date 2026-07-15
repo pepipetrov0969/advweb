@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CalendarCheck, Clock, Mail, Menu, Phone, X } from "lucide-react";
+import { FaViber, FaWhatsapp } from "react-icons/fa6";
 import { nav, site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
@@ -21,22 +22,42 @@ export function Header() {
     <header className="sticky top-0 z-50">
       {/* Горна лента с контакти */}
       <div className="bg-espresso text-cream">
-        <Container className="flex h-9 items-center justify-between text-xs">
-          <div className="flex items-center gap-5">
+        <Container className="relative flex h-11 items-center justify-end text-xs">
+          <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-6 text-sm font-medium">
             <a
               href={`tel:${site.phone}`}
               className="flex items-center gap-1.5 transition-colors hover:text-tan"
             >
-              <Phone className="size-3.5" />
+              <Phone className="size-4" />
               <span>{site.phoneDisplay}</span>
             </a>
             <a
               href={`mailto:${site.email}`}
               className="hidden items-center gap-1.5 transition-colors hover:text-tan sm:flex"
             >
-              <Mail className="size-3.5" />
+              <Mail className="size-4" />
               <span>{site.email}</span>
             </a>
+            <span className="flex items-center gap-3">
+              <a
+                href={site.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Пишете ни в WhatsApp"
+                title="WhatsApp"
+                className="transition-colors hover:text-tan"
+              >
+                <FaWhatsapp className="size-4" />
+              </a>
+              <a
+                href={site.viberUrl}
+                aria-label="Пишете ни във Viber"
+                title="Viber"
+                className="transition-colors hover:text-tan"
+              >
+                <FaViber className="size-4" />
+              </a>
+            </span>
           </div>
           <p className="hidden items-center gap-1.5 text-cream/80 md:flex">
             <Clock className="size-3.5" />

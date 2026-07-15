@@ -44,6 +44,7 @@ lib/
   tariffs.ts        тарифни таблици на калкулаторите (лесни за актуализация)
   format.ts         двойно обозначаване EUR/BGN (фиксинг 1.95583)
   send-email.ts     изпращане през Resend REST API (без ключ → лог в конзолата)
+  bookings.ts       заети часове през Upstash Redis / Vercel KV (fallback: файл, само за localhost)
 ```
 
 ## Чеклист преди публикуване
@@ -68,6 +69,11 @@ lib/
 Техническо:
 - [ ] Имейл интеграция: регистрация в resend.com, верифициране на домейна,
       попълване на `.env` по образеца на `.env.example`
+- [ ] Съхранение на заетите часове: на Vercel добавете Storage → Upstash Redis
+      към проекта (Vercel попълва `UPSTASH_REDIS_REST_URL` /
+      `UPSTASH_REDIS_REST_TOKEN` автоматично) - **без това "Запази час" дава
+      грешка и не изпраща имейл**, защото файловата система на Vercel е
+      read-only
 - [ ] Деплой: препоръчително във Vercel (безплатен план) + насочване на
       домейна advatanasova.bg (A запис / CNAME по инструкциите на Vercel)
 - [ ] Google Search Console: подаване на `https://advatanasova.bg/sitemap.xml`

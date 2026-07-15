@@ -71,7 +71,18 @@ export async function submitBooking(
     values.data !== "" && values.chas !== "" && values.chas !== NO_PREFERENCE;
 
   if (wantsSlot) {
-    const reserved = await reserveSlot(values.data, values.chas);
+    let reserved: boolean;
+    try {
+      reserved = await reserveSlot(values.data, values.chas);
+    } catch (error) {
+      console.error("Неуспешна проверка/запис на часа:", error);
+      return {
+        status: "error",
+        message:
+          "Възникна техническа грешка при изпращането. Моля, опитайте отново или се обадете по телефона.",
+        values,
+      };
+    }
     if (!reserved) {
       return {
         status: "error",
@@ -104,7 +115,11 @@ export async function submitBooking(
 
   if (!sent) {
     // Освобождаваме часа, за да не остане блокиран от неуспешно запитване.
-    if (wantsSlot) await releaseSlot(values.data, values.chas);
+    if (wantsSlot) {
+      await releaseSlot(values.data, values.chas).catch((error) =>
+        console.error("Неуспешно освобождаване на часа:", error),
+      );
+    }
     return {
       status: "error",
       message:

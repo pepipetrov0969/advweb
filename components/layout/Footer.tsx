@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone, Scale } from "lucide-react";
+import { FaViber, FaWhatsapp } from "react-icons/fa6";
 import { nav, site } from "@/content/site";
 import { practiceAreas } from "@/content/practice-areas";
 import { Container } from "@/components/ui/Container";
@@ -98,6 +99,26 @@ export function Footer() {
             <li className="flex items-center gap-2.5">
               <Clock className="size-4 shrink-0 text-tan" />
               {site.hours}
+            </li>
+            <li>
+              <a
+                href={site.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 transition-colors hover:text-tan"
+              >
+                <FaWhatsapp className="size-4 shrink-0 text-tan" />
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.viberUrl}
+                className="flex items-center gap-2.5 transition-colors hover:text-tan"
+              >
+                <FaViber className="size-4 shrink-0 text-tan" />
+                Viber
+              </a>
             </li>
           </ul>
         </div>

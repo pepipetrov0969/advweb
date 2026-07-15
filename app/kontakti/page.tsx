@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { FaViber, FaWhatsapp } from "react-icons/fa6";
 import { site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -33,6 +34,19 @@ export default function ContactPage() {
       icon: Clock,
       title: "Работно време",
       lines: [site.hours],
+    },
+    {
+      icon: FaWhatsapp,
+      title: "WhatsApp",
+      lines: [site.phoneDisplay],
+      href: site.whatsappUrl,
+      external: true,
+    },
+    {
+      icon: FaViber,
+      title: "Viber",
+      lines: [site.phoneDisplay],
+      href: site.viberUrl,
     },
   ];
 
@@ -71,6 +85,7 @@ export default function ContactPage() {
                 <a
                   key={card.title}
                   href={card.href}
+                  {...(card.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="rounded-xl border border-line bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-tan hover:shadow-md"
                 >
                   {content}
