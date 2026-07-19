@@ -19,6 +19,11 @@ export default function ContactPage() {
       lines: [`${site.address.city}`, site.address.line],
     },
     {
+      icon: MapPin,
+      title: "Адрес (София)",
+      lines: ["гр. София", "Очаквайте скоро"],
+    },
+    {
       icon: Phone,
       title: "Телефон",
       lines: [site.phoneDisplay],

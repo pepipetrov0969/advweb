@@ -12,13 +12,13 @@ export const site = {
   fullName: "Красимира Иванова Атанасова",
   firstName: "Красимира",
   title: "Адвокат",
-  tagline: "Адвокатска кантора · Монтана",
+  tagline: "Адвокатска кантора · Монтана · София",
   domain: "https://advatanasova.bg",
   description:
     "Адвокатска кантора в Монтана - правни консултации, сделки с недвижими имоти, търговско и семейно право, процесуално представителство пред съд.",
 
   phone,
-  phoneDisplay: "0889 036 109",
+  phoneDisplay: "+359 889 036 109",
   email: "atanasovva@abv.bg",
   whatsappUrl: `https://wa.me/${phoneDigits}`,
   viberUrl: `viber://chat?number=%2B${phoneDigits}`,
