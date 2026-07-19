@@ -42,6 +42,7 @@ export const site = {
 export type NavItem = { href: string; label: string };
 
 export const nav: NavItem[] = [
+  { href: "/prevalutirane-na-kapitala", label: "Капитал в евро" },
   { href: "/za-men", label: "За мен" },
   { href: "/uslugi", label: "Услуги" },
   { href: "/oblasti-na-deynost", label: "Области на дейност" },

@@ -77,7 +77,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-coffee",
+                  "whitespace-nowrap text-sm font-medium transition-colors hover:text-coffee",
                   isActive(item.href) ? "text-coffee" : "text-ink",
                 )}
               >
