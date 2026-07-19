@@ -52,4 +52,6 @@ export const serviceCategoryIcons: Record<ServiceCategoryIcon, LucideIcon> = {
   scroll: ScrollText,
   handshake: Handshake,
   landmark: Landmark,
+  clipboard: ClipboardList,
+  gavel: Gavel,
 };
