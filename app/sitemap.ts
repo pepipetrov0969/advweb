@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/za-men",
     "/uslugi",
+    "/prevalutirane-na-kapitala",
     "/oblasti-na-deynost",
     "/kalkulatori",
     "/kalkulatori/notarialni-taksi",
