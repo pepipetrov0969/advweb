@@ -6,6 +6,7 @@ import { site } from "@/content/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/shared/FloatingContact";
+import { MobileCtaBar } from "@/components/shared/MobileCtaBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({
@@ -41,7 +42,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="bg" className={`${inter.variable} ${playfair.variable}`}>
-      <body>
+      <body className="pb-16 sm:pb-0">
         <a
           href="#sadarzhanie"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-coffee focus:px-4 focus:py-2 focus:text-sm focus:text-white"
@@ -52,6 +53,7 @@ export default function RootLayout({
         <main id="sadarzhanie">{children}</main>
         <Footer />
         <FloatingContact />
+        <MobileCtaBar />
         <JsonLd />
         <Script
           async
