@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Clock, Mail, MapPin, Phone, Scale } from "lucide-react";
 import { FaViber, FaWhatsapp } from "react-icons/fa6";
 import { nav, site } from "@/content/site";
-import { practiceAreas } from "@/content/practice-areas";
+import { serviceCategories } from "@/content/services";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -54,13 +54,13 @@ export function Footer() {
             Области на дейност
           </p>
           <ul className="space-y-2.5 text-sm">
-            {practiceAreas.slice(0, 6).map((area) => (
-              <li key={area.slug}>
+            {serviceCategories.map((category) => (
+              <li key={category.slug}>
                 <Link
-                  href={`/oblasti-na-deynost/${area.slug}`}
+                  href={`/uslugi#${category.slug}`}
                   className="transition-colors hover:text-tan"
                 >
-                  {area.title}
+                  {category.title}
                 </Link>
               </li>
             ))}

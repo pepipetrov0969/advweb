@@ -8,10 +8,8 @@ import {
   Fingerprint,
   Gavel,
   Handshake,
-  KeyRound,
   Landmark,
   Laptop,
-  MessageSquare,
   PiggyBank,
   Scale,
   ScrollText,
@@ -46,9 +44,12 @@ export const practiceAreaIcons: Record<PracticeAreaIcon, LucideIcon> = {
 };
 
 export const serviceCategoryIcons: Record<ServiceCategoryIcon, LucideIcon> = {
-  key: KeyRound,
   briefcase: Briefcase,
-  users: Users,
+  building: Building2,
+  banknote: Banknote,
   scale: Scale,
-  message: MessageSquare,
+  users: Users,
+  scroll: ScrollText,
+  handshake: Handshake,
+  landmark: Landmark,
 };

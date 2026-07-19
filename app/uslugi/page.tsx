@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { serviceCategories } from "@/content/services";
-import { dualPrice } from "@/lib/format";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CtaBand } from "@/components/shared/CtaBand";
 import { serviceCategoryIcons } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Услуги и цени",
+  title: "Услуги",
   description:
-    "Правни услуги с ясни цени - недвижими имоти, фирмени регистрации, семейно право, съдебни дела и консултации.",
+    "Правни услуги по области - търговско, вещно, банково, гражданско, семейно и наследствено право, трудово и административно право.",
 };
 
 export default function ServicesPage() {
@@ -21,8 +19,8 @@ export default function ServicesPage() {
         <Container className="py-14 sm:py-16">
           <SectionHeading
             eyebrow="Услуги"
-            title="Услуги и цени"
-            lead="Най-търсените услуги са с предварително обявени цени. За по-сложни казуси възнаграждението се договаря според обема и материалния интерес."
+            title="В какво мога да ви съдействам"
+            lead="Конкретните услуги, които предлагам, подредени по правни области. За индивидуална преценка на казуса ви - запазете час за консултация."
           />
           <nav aria-label="Категории услуги" className="mt-8 flex flex-wrap gap-2">
             {serviceCategories.map((category) => (
@@ -39,11 +37,11 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-white">
-        <Container className="space-y-16 py-16 sm:py-20">
+        <Container className="space-y-14 py-16 sm:py-20">
           {serviceCategories.map((category) => {
             const Icon = serviceCategoryIcons[category.icon];
             return (
-              <div key={category.slug} id={category.slug}>
+              <div key={category.slug} id={category.slug} className="scroll-mt-36">
                 <div className="flex items-start gap-4">
                   <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-tan/30 text-chestnut">
                     <Icon className="size-6" strokeWidth={1.9} />
@@ -58,45 +56,19 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <ul className="mt-7 grid gap-x-8 gap-y-3 rounded-2xl border border-line bg-parchment p-6 sm:grid-cols-2 sm:p-8">
                   {category.services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/uslugi/${service.slug}`}
-                      className="group flex flex-col rounded-xl border border-line bg-white p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-tan hover:shadow-md"
-                    >
-                      <h3 className="font-display text-lg font-semibold text-espresso group-hover:text-coffee">
-                        {service.title}
-                      </h3>
-                      <p className="mt-2 flex-1 text-sm leading-relaxed text-clay">
-                        {service.excerpt}
-                      </p>
-                      <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
-                        <p className="text-sm font-semibold text-coffee">
-                          {service.priceEUR === null
-                            ? "по договаряне"
-                            : dualPrice(
-                                service.priceEUR,
-                                service.priceFrom ? "от" : undefined,
-                              )}
-                        </p>
-                        <ArrowRight className="size-4 text-chestnut transition-transform group-hover:translate-x-1" />
-                      </div>
-                      {service.priceNote ? (
-                        <p className="mt-1 text-xs text-clay">{service.priceNote}</p>
-                      ) : null}
-                    </Link>
+                    <li key={service} className="flex items-start gap-2.5 text-sm text-ink">
+                      <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-coffee/10 text-coffee">
+                        <Check className="size-3.5" strokeWidth={3} />
+                      </span>
+                      {service}
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             );
           })}
-
-          <p className="rounded-xl border border-line bg-parchment px-6 py-4 text-sm leading-relaxed text-clay">
-            Посочените цени са ориентировъчни и не включват държавни, съдебни и
-            нотариални такси, освен ако изрично не е посочено друго. Точното
-            възнаграждение се потвърждава преди започване на работа.
-          </p>
         </Container>
       </section>
 

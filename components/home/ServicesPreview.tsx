@@ -1,15 +1,12 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { featuredServices } from "@/content/services";
-import { dualPrice } from "@/lib/format";
+import { serviceCategories } from "@/content/services";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 import { serviceCategoryIcons } from "@/components/icons";
 
 export function ServicesPreview() {
-  const services = featuredServices();
-
   return (
     <section className="border-y border-line bg-parchment">
       <Container className="py-16 sm:py-20">
@@ -17,7 +14,7 @@ export function ServicesPreview() {
           <SectionHeading
             eyebrow="Услуги"
             title="Как мога да ви бъда полезна"
-            lead="Фиксирани цени за най-търсените услуги - знаете разходите си предварително, без скрити такси."
+            lead="Правни услуги по основните области на практиката ми."
           />
           <ButtonLink href="/uslugi" variant="outline">
             Всички услуги
@@ -25,38 +22,23 @@ export function ServicesPreview() {
           </ButtonLink>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = serviceCategoryIcons[service.category.icon];
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {serviceCategories.map((category) => {
+            const Icon = serviceCategoryIcons[category.icon];
             return (
               <Link
-                key={service.slug}
-                href={`/uslugi/${service.slug}`}
+                key={category.slug}
+                href={`/uslugi#${category.slug}`}
                 className="group flex flex-col rounded-xl border border-line bg-white p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-tan hover:shadow-md"
               >
-                <div className="flex items-center gap-3">
-                  <span className="flex size-10 items-center justify-center rounded-lg bg-tan/30 text-chestnut">
-                    <Icon className="size-5" strokeWidth={1.9} />
-                  </span>
-                  <p className="text-xs font-medium uppercase tracking-wider text-chestnut">
-                    {service.category.title}
-                  </p>
-                </div>
+                <span className="flex size-10 items-center justify-center rounded-lg bg-tan/30 text-chestnut transition-colors group-hover:bg-coffee group-hover:text-cream">
+                  <Icon className="size-5" strokeWidth={1.9} />
+                </span>
                 <h3 className="mt-4 font-display text-lg font-semibold text-espresso group-hover:text-coffee">
-                  {service.title}
+                  {category.title}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-clay">
-                  {service.excerpt}
-                </p>
-                <p className="mt-5 border-t border-line pt-4 text-sm font-semibold text-coffee">
-                  {service.priceEUR === null
-                    ? "по договаряне"
-                    : dualPrice(service.priceEUR, service.priceFrom ? "от" : undefined)}
-                  {service.priceNote ? (
-                    <span className="ml-1 font-normal text-clay">
-                      · {service.priceNote}
-                    </span>
-                  ) : null}
+                  {category.intro}
                 </p>
               </Link>
             );
