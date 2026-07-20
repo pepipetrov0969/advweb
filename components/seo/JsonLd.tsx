@@ -1,5 +1,5 @@
 import { site } from "@/content/site";
-import { practiceAreas } from "@/content/practice-areas";
+import { serviceCategories } from "@/content/services";
 
 // Структурирани данни (schema.org) за по-добро локално SEO.
 export function JsonLd() {
@@ -31,7 +31,7 @@ export function JsonLd() {
       jobTitle: "Адвокат",
     },
     areaServed: "BG",
-    knowsAbout: practiceAreas.map((a) => a.title),
+    knowsAbout: serviceCategories.map((c) => c.title),
   };
 
   return (

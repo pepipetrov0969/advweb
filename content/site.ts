@@ -45,7 +45,7 @@ export const nav: NavItem[] = [
   { href: "/prevalutirane-na-kapitala", label: "Капитал в евро" },
   { href: "/za-men", label: "За мен" },
   { href: "/uslugi", label: "Услуги" },
-  { href: "/oblasti-na-deynost", label: "Области на дейност" },
+  { href: "/konsultatsiya", label: "Консултация" },
   { href: "/kalkulatori", label: "Калкулатори" },
   { href: "/kontakti", label: "Контакти" },
 ];

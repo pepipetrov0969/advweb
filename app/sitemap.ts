@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
-import { practiceAreas } from "@/content/practice-areas";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -8,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/za-men",
     "/uslugi",
     "/prevalutirane-na-kapitala",
-    "/oblasti-na-deynost",
+    "/konsultatsiya",
     "/kalkulatori",
     "/kalkulatori/notarialni-taksi",
     "/kalkulatori/sadebni-taksi",
@@ -19,16 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/obshti-usloviya",
   ];
 
-  return [
-    ...staticRoutes.map((route) => ({
-      url: `${site.domain}${route}`,
-      lastModified: new Date(),
-      priority: route === "" ? 1 : 0.7,
-    })),
-    ...practiceAreas.map((area) => ({
-      url: `${site.domain}/oblasti-na-deynost/${area.slug}`,
-      lastModified: new Date(),
-      priority: 0.6,
-    })),
-  ];
+  return staticRoutes.map((route) => ({
+    url: `${site.domain}${route}`,
+    lastModified: new Date(),
+    priority: route === "" ? 1 : 0.7,
+  }));
 }

@@ -51,7 +51,7 @@ export function Footer() {
 
         <div>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-tan">
-            Области на дейност
+            Услуги
           </p>
           <ul className="space-y-2.5 text-sm">
             {serviceCategories.map((category) => (

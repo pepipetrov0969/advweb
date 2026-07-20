@@ -11,6 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { site } from "@/content/site";
+import { fmtMoney } from "@/lib/format";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
@@ -64,15 +65,19 @@ const trust = [
 const faq = [
   {
     q: "Кои дружества трябва да превалутират капитала си?",
-    a: "Всички търговски дружества, чийто капитал е вписан в левове в Търговския регистър, трябва да приведат размера му в евро и да отразят промяната по партидата си.",
+    a: ["Всички търговски дружества, чийто капитал е вписан в левове в Търговския регистър, трябва да приведат размера му в евро и да отразят промяната по партидата си."],
   },
   {
     q: "Какъв е срокът за превалутиране?",
-    a: "Срокът е определен в Закона за въвеждането на еврото в Република България. За да сте сигурни, че сте в срок за вашето конкретно дружество, свържете се с нас за кратка ориентировъчна консултация.",
+    a: ["Срокът е определен в Закона за въвеждането на еврото в Република България. За да сте сигурни, че сте в срок за вашето конкретно дружество, свържете се с нас за кратка ориентировъчна консултация."],
   },
   {
     q: "Трябва ли да сменям целия дружествен договор?",
-    a: "Обикновено не - актуализират се само клаузите, засегнати от промяната на капитала. Ще прегледаме конкретния ви учредителен акт и ще предложим най-простото решение.",
+    a: [
+      "На практика има два подхода:",
+      "Изменение на дружествения договор – променят се само съответните текстове относно капитала.",
+      "Приемане на нов, актуализиран дружествен договор – това не е задължително, но често се прави за по-голяма яснота и удобство.",
+    ],
   },
 ];
 
@@ -106,6 +111,32 @@ export default function PrevalutiraneNaKapitalaPage() {
             <ButtonLink href={`tel:${site.phone}`} variant="ghost-light" size="lg">
               <Phone className="size-5" />
               {site.phoneDisplay}
+            </ButtonLink>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-line bg-white">
+        <Container className="py-10 sm:py-12">
+          <div className="flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-line bg-parchment p-6 sm:p-8">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-chestnut">
+                Цена
+              </p>
+              <p className="mt-2 font-display text-3xl font-semibold text-espresso">
+                {fmtMoney(69, "EUR")}
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-clay">
+                Крайна цена за цялостното съдействие по превалутирането на
+                капитала - без скрити такси.
+              </p>
+            </div>
+            <ButtonLink
+              href={`/zapazi-chas?tema=${encodeURIComponent("Търговско право")}`}
+              size="lg"
+            >
+              <CalendarCheck className="size-5" />
+              Запазете консултация
             </ButtonLink>
           </div>
         </Container>
@@ -192,7 +223,11 @@ export default function PrevalutiraneNaKapitalaPage() {
                 <p className="font-display text-lg font-semibold text-espresso">
                   {item.q}
                 </p>
-                <p className="mt-2 leading-relaxed text-clay">{item.a}</p>
+                <div className="mt-2 space-y-1.5 leading-relaxed text-clay">
+                  {item.a.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

@@ -2,46 +2,16 @@ import {
   Banknote,
   Briefcase,
   Building2,
-  Calculator,
   ClipboardList,
-  FileText,
-  Fingerprint,
   Gavel,
   Handshake,
   Landmark,
-  Laptop,
-  PiggyBank,
   Scale,
   ScrollText,
-  ShieldAlert,
-  ShieldCheck,
-  Umbrella,
   Users,
   type LucideIcon,
 } from "lucide-react";
-import type { PracticeAreaIcon } from "@/content/practice-areas";
 import type { ServiceCategoryIcon } from "@/content/services";
-
-export const practiceAreaIcons: Record<PracticeAreaIcon, LucideIcon> = {
-  building: Building2,
-  "file-text": FileText,
-  briefcase: Briefcase,
-  users: Users,
-  scroll: ScrollText,
-  handshake: Handshake,
-  landmark: Landmark,
-  banknote: Banknote,
-  gavel: Gavel,
-  shield: ShieldCheck,
-  scale: Scale,
-  calculator: Calculator,
-  clipboard: ClipboardList,
-  "piggy-bank": PiggyBank,
-  umbrella: Umbrella,
-  "shield-alert": ShieldAlert,
-  laptop: Laptop,
-  fingerprint: Fingerprint,
-};
 
 export const serviceCategoryIcons: Record<ServiceCategoryIcon, LucideIcon> = {
   briefcase: Briefcase,

@@ -19,6 +19,7 @@ export type ServiceCategory = {
   slug: string;
   title: string;
   icon: ServiceCategoryIcon;
+  image?: string;
   intro: string;
   services: string[];
 };
@@ -28,6 +29,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "targovsko-pravo",
     title: "Търговско право",
     icon: "briefcase",
+    image: "/images/services/targovsko-pravo.jpg",
     intro:
       "Учредяване и преструктуриране на дружества, отношения между съдружници, търговски сделки, ликвидация и несъстоятелност.",
     services: [
@@ -48,6 +50,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "veshtno-pravo",
     title: "Вещно право",
     icon: "building",
+    image: "/images/services/veshtno-pravo.jpg",
     intro:
       "Сделки с имоти, защита на собствеността, съсобственост, вещни тежести и консултации в строителството.",
     services: [
@@ -67,6 +70,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "bankovo-pravo",
     title: "Банково право",
     icon: "banknote",
+    image: "/images/services/bankovo-pravo.jpg",
     intro:
       "Правно съдействие при банково кредитиране, обезпечения и спорове с банкови институции.",
     services: [
@@ -86,6 +90,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "grazhdansko-pravo",
     title: "Гражданско право",
     icon: "scale",
+    image: "/images/services/grazhdansko-pravo.jpg",
     intro:
       "Договори, обезщетения, събиране на вземания и защита по граждански спорове.",
     services: [
@@ -105,6 +110,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "semeyno-pravo",
     title: "Семейно право",
     icon: "users",
+    image: "/images/services/semeyno-pravo.jpg",
     intro:
       "Развод, родителски права, издръжка и имуществени отношения между съпрузи.",
     services: [
@@ -124,6 +130,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "nasledstveno-pravo",
     title: "Наследствено право",
     icon: "scroll",
+    image: "/images/services/nasledstveno-pravo.jpg",
     intro:
       "Наследяване по закон и по завещание, отказ от наследство, делба между наследници.",
     services: [
@@ -143,6 +150,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "trudovo-pravo",
     title: "Трудово и осигурително право",
     icon: "handshake",
+    image: "/images/services/trudovo-pravo.jpg",
     intro:
       "Трудови договори, уволнения, обезщетения, осигурителен стаж и права на работници и работодатели.",
     services: [
@@ -162,6 +170,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "administrativno-pravo",
     title: "Административно и административно-наказателно право",
     icon: "landmark",
+    image: "/images/services/administrativno-pravo.jpg",
     intro:
       "Обжалване на административни актове, наказателни постановления, електронни фишове и лицензионни процедури.",
     services: [
@@ -181,6 +190,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "zapovedno-proizvodstvo",
     title: "Заповедно производство (чл. 410 и чл. 417 ГПК)",
     icon: "clipboard",
+    image: "/images/services/zapovedno-proizvodstvo.jpg",
     intro:
       "Бързо снабдяване с изпълнителен лист по безспорни парични вземания.",
     services: [
@@ -200,6 +210,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "izpalnitelno-proizvodstvo",
     title: "Изпълнително производство",
     icon: "gavel",
+    image: "/images/services/izpalnitelno-proizvodstvo.jpg",
     intro:
       "Защита на взискатели и длъжници в хода на изпълнителния процес пред съдебен изпълнител.",
     services: [
