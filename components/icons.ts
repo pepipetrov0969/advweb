@@ -3,11 +3,14 @@ import {
   Briefcase,
   Building2,
   ClipboardList,
+  FileText,
   Gavel,
   Handshake,
   Landmark,
+  Lock,
   Scale,
   ScrollText,
+  Umbrella,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -24,4 +27,7 @@ export const serviceCategoryIcons: Record<ServiceCategoryIcon, LucideIcon> = {
   landmark: Landmark,
   clipboard: ClipboardList,
   gavel: Gavel,
+  lock: Lock,
+  "file-text": FileText,
+  umbrella: Umbrella,
 };
