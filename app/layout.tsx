@@ -36,6 +36,20 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} - Адвокатска кантора в Монтана`,
     description: site.description,
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: site.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} - Адвокатска кантора в Монтана`,
+    description: site.description,
+    images: ["/images/og-image.jpg"],
   },
 };
 
