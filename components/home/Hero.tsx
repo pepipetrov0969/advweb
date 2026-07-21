@@ -16,7 +16,7 @@ const highlights = [
 export function Hero() {
   return (
     <section className="border-b border-line bg-cream">
-      <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:py-24">
+      <Container className="grid items-center gap-12 py-10 sm:py-14 lg:grid-cols-2 lg:py-16">
         <div className="animate-fade-up">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-chestnut">
             {site.tagline}
