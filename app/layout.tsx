@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
@@ -55,6 +56,7 @@ export default function RootLayout({
         <FloatingContact />
         <MobileCtaBar />
         <JsonLd />
+        <Analytics />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-18325005980"
