@@ -40,7 +40,7 @@ export function Hero() {
             </ButtonLink>
           </div>
 
-          <ul className="mt-9 space-y-2.5">
+          <ul className="mt-6 space-y-2.5">
             {highlights.map((item) => (
               <li key={item} className="flex items-center gap-2.5 text-sm text-ink">
                 <span className="flex size-5 items-center justify-center rounded-full bg-coffee/10 text-coffee">
