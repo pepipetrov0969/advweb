@@ -32,6 +32,7 @@ export const metadata: Metadata = {
   description: site.description,
   openGraph: {
     type: "website",
+    url: site.domain,
     locale: "bg_BG",
     siteName: site.name,
     title: `${site.name} - Адвокатска кантора в Монтана`,
