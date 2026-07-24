@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CalendarCheck, CheckCircle2, LoaderCircle } from "lucide-react";
 import { submitBooking, type FormState } from "@/app/actions";
 import { NO_PREFERENCE, timeSlots } from "@/lib/booking-slots";
+import { trackConversion } from "@/lib/gtag";
 import { Button } from "@/components/ui/Button";
 import {
   FieldError,
@@ -54,6 +55,12 @@ export function BookingForm({
       active = false;
     };
   }, [izbranaData]);
+
+  useEffect(() => {
+    if (state.status === "success") {
+      trackConversion("7zUtCPby3tUcEJzNhaJE");
+    }
+  }, [state.status]);
 
   if (state.status === "success") {
     return (
